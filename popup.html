@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Organizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <script src="jquery.js"></script>
+    <script src="popup.js" charset="UTF-8"></script>
+</head>
+<body>
+<div id="container">
+    <div id="title">&nbsp;&nbsp;DOWNLOAD ORGANIZER&nbsp;&nbsp;</div>
+    <div class="tab">
+        <button class="tablinks" id="conf">Configuration</button>
+        <button class="tablinks" id="adv">Advanced</button>
+        <button class="tablinks" id="instr">Instructions</button>
+    </div>
+    <div id="conf_content" class="tabcontent">
+        <table id="rules">
+        </table>
+        <div id="new_rul">
+            <select id="select_type">
+                <option value="image" class="group">Images</option>
+                <option value="image/jpeg">&nbsp;&nbsp;Jpeg</option>
+                <option value="image/png">&nbsp;&nbsp;Png</option>
+                <option value="image/gif">&nbsp;&nbsp;Gif</option>
+
+                <option value="application" class="group">Application</option>
+                <option value="application/exe">&nbsp;&nbsp;Exe</option>
+                <option value="application/vdn.ms-excel">&nbsp;&nbsp;Excel (.xls)</option>
+                <option value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">&nbsp;&nbsp;Excel
+                    (.xlsx)
+                </option>
+                <option value="application/javascript">&nbsp;&nbsp;Javascript</option>
+                <option value="application/json">&nbsp;&nbsp;Json</option>
+                <option value="application/pdf">&nbsp;&nbsp;Pdf</option>
+                <option value="application/vdn.ms-powerpoint">&nbsp;&nbsp;Powerpoint (.ppt)</option>
+                <option value="application/vnd.openxmlformats-officedocument.presentationml.presentation">&nbsp;&nbsp;Powerpoint
+                    (.pptx)
+                </option>
+                <option value="application/vnd.rar">&nbsp;&nbsp;Rar</option>
+                <option value="application/x-bittorrent">&nbsp;&nbsp;Torrent</option>
+                <option value="application/msword">&nbsp;&nbsp;Word (.doc)</option>
+                <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">&nbsp;&nbsp;Word
+                    (.docx)
+                </option>
+                <option value="application/xml">&nbsp;&nbsp;Xml</option>
+                <option value="application/zip">&nbsp;&nbsp;Zip</option>
+
+                <option value="audio" class="group">Audio</option>
+                <option value="audio/acc">&nbsp;&nbsp;Acc</option>
+                <option value="audio/mpeg">&nbsp;&nbsp;Mpeg</option>
+                <option value="audio/ogg">&nbsp;&nbsp;Ogg</option>
+
+                <option value="video" class="group">Video</option>
+                <option value="video/x-msvideo">&nbsp;&nbsp;Avi</option>
+                <option value="video/mpeg">&nbsp;&nbsp;Mpeg</option>
+                <option value="video/webm">&nbsp;&nbsp;Webm</option>
+
+                <option value="text" class="group">Text</option>
+                <option value="text/css">&nbsp;&nbsp;Css</option>
+                <option value="text/csv">&nbsp;&nbsp;Csv</option>
+                <option value="text/html">&nbsp;&nbsp;Html</option>
+                <option value="text/plain">&nbsp;&nbsp;Plain</option>
+                <option value="text/xml">&nbsp;&nbsp;Xml</option>
+
+            </select>
+            <em class="icon-navigate_next"></em>
+            <input type="text" id="folder" placeholder="Destination folder">
+        </div>
+        <div id="error_path" class="error-message"><b>Invalid path</b></div>
+        <button id="add_rul" class="add_button">Add rule</button>
+    </div>
+    <div id="adv_content" class="tabcontent">
+        <table id="custom_types">
+        </table>
+        <div id="new_type">
+            <input type="text" id="mime_type" placeholder="MIME type, e.g. image/x-icon">
+            <em class="icon-navigate_next"></em>
+            <input type="text" id="label" placeholder="Label, e.g. Icons">
+        </div>
+        <div id="error_custom" class="error-message"><b>Missing data</b></div>
+        <button id="add_type" class="add_button">Add custom file type</button>
+    </div>
+    <div id="instr_content" class="tabcontent">
+        <h3>Configuration</h3>
+        <p>
+            Here you can add rules for redirecting downloads based on file type. Some file types are more generic than
+            others (e.g. <i>images</i> is more generic than <i>Png</i>, so
+            priority matters and can be adjusted in the <i>Actions</i> column.
+        </p>
+        <p>
+            Due to security reasons, you can only specify paths relative to your
+            download directory. To go around that, you can edit your download location.
+        </p>
+        <h3>Advanced</h3>
+        <p>
+            If you can't find the desired file type, you can add your own by specifying a MIME type (e.g. image/jepg)
+            and a label. The newly added file type will be visible in <i>Configuration</i>, under
+            <i>Custom</i>.
+        </p>
+        <p class="highlight">
+            For bug reports and suggestions, check out the <a href="https://github.com/MireaRadu/download-organizer">GitHub repository</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
