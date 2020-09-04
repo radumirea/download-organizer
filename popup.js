@@ -15,7 +15,7 @@ $(document).ready(function () {
         var type_t = $type_el.children("option:selected").val();
         var type_d = $type_el.children("option:selected").text().trim();
         var folder = $folder.val();
-        if (!folder.match("^[\\/\\\\]?([A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*)(([\\/\\\\][A-Za-z0-9_.-]+)*)$")) {
+        if (!folder.match("^(?!([a-zA-Z]:))(?!\\\\|\\/)(?!.*(\\/\\.\\.\\/|\\\\\\.\\.\\\\)).*")) {
             $error.css("display", "block");
             $folder.addClass("error");
             return;
@@ -28,7 +28,7 @@ $(document).ready(function () {
                 rules = [];
             }
             if (folder === "") {
-                folder = "/";
+               folder = ".";
             }
             rules.push({type_t: type_t, type_d: type_d, folder: folder});
             chrome.storage.local.set({"rules": rules});
